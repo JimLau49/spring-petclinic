@@ -20,7 +20,7 @@ pipeline {
         }   
 
         stage('Deploy'){
-            when { equals expected: true, actual: Deploy }
+            when { 'branch' }
             steps{
                 bat './mvnw package'
             }   
