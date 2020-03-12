@@ -18,10 +18,11 @@ pipeline {
                 bat './mvnw package'
             }  
         }   
-        
+
         stage('Deploy'){
+            when { equals expected: true, actual: Deploy }
             steps{
-                bat './mvnw deploy'
+                bat './mvnw package'
             }   
           }
         }
