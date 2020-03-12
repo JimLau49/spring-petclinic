@@ -23,6 +23,9 @@ pipeline {
             steps {
                 bat './mvnw deploy' 
             }
+
         }
+
     }
+    
 }
