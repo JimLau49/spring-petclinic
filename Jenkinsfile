@@ -6,23 +6,26 @@ pipeline {
                 bat './mvnw clean' 
             }
         }
-        
-        stage('Test'){
-            steps{
-                bat './mvnw test'
+        stage('Test') {
+            steps {
+                bat './mvnw test' 
             }
         }
-            
-        stage('Package'){
-            steps{
-                bat './mvnw package'
-            }  
-        }   
-        stage('Deploy'){
-            steps{
-                bat './mvnw deploy'
-            }   
-          }
+        stage('Package') {
+            steps {
+                bat './mvnw package' 
+            }
         }
-    }
+        stage('Deploy') {
+            when {
+                branch 'master'
+            }
+            steps {
+                bat './mvnw deploy' 
+            }
 
+        }
+
+    }
+    
+}
