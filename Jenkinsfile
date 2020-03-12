@@ -24,6 +24,5 @@ pipeline {
                 bat './mvnw deploy' 
             }
         }
-
     }
 }
