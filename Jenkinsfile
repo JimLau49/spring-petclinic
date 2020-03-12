@@ -20,9 +20,11 @@ pipeline {
         }   
 
         stage('Deploy'){
-            when { 'branch' }
+            when { 
+                'branch' 
+            }
             steps{
-                bat './mvnw package'
+                bat './mvnw deploy'
             }   
           }
         }
